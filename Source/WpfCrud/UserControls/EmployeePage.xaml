@@ -1,0 +1,69 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCrud.UserControls"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="WpfCrud.UserControls.EmployeePage"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1000">
+    <Grid>
+        <Viewbox>
+            <Grid Background="White" Height="800" Width="1200">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="69*"/>
+                    <RowDefinition Height="327*"/>
+                    <RowDefinition Height="329*"/>
+                    <RowDefinition Height="64*"/>
+                    <RowDefinition Height="11*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="177*"/>
+                    <ColumnDefinition Width="1001*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Current Employees" FontSize="25" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                <telerik:RadGridView x:Name="EmployeesGridView" FontSize="20" IsReadOnly="True" Grid.Column="1" Margin="10,1,10,10" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="EmployeesGridView_SelectionChanged"/>
+
+                <Grid Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="ReadEmployeesButton" FontSize="20" Content="Read Employees" Grid.Column="2" Margin="10" Click="ReadEmployeesButton_Click"/>
+                    <Button x:Name="CreateEmployeeButton" FontSize="20" Content="Create Employee" Margin="10" Grid.Column="1" Click="CreateEmployeeButton_Click"/>
+                    <Button x:Name="UpdateEmployeeButton" FontSize="20" Content="Update Employee" Grid.Column="3" Margin="10" Click="UpdateEmployeeButton_Click"/>
+                    <Button x:Name="DeleteEmployeeButton" FontSize="20" Content="Delete Employee" Grid.Column="4" Margin="10" Click="DeleteEmployeeButton_Click"/>
+                </Grid>
+                <Label Content="Employees" FontSize="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1" Foreground="#FF0432FF"/>
+                <Grid Grid.Column="1" Margin="10,0,0,0" Grid.Row="2" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="FirstName:" FontSize="20" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label Content="LastName:" FontSize="20" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="1"/>
+                    <Label Content="Title:" FontSize="20" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2"/>
+                    <Label Content="Salary:" FontSize="20" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="3"/>
+                    <TextBox x:Name="FirstNameTextBox" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" Margin="10" TextWrapping="Wrap"/>
+                    <TextBox x:Name="LastNameTextBox" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" Margin="10" TextWrapping="Wrap" Grid.Row="1"/>
+                    <TextBox x:Name="TitleTextBox" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" Margin="10" TextWrapping="Wrap" Grid.Row="2"/>
+                    <telerik:RadNumericUpDown x:Name="SalaryNumeric" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Minimum="0" Maximum="200000" NumberDecimalDigits="0" Grid.Column="2" Margin="10" Grid.Row="3"/>
+                </Grid>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>
